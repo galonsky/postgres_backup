@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
 set -e
 
-DATE=`date --iso`
+DATE=`date -I`
 FILENAME="backup-$DATE.sql"
 export PGPASSWORD=${DATABASE_PASSWORD}
 

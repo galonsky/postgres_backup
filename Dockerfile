@@ -1,9 +1,9 @@
-FROM amazonlinux:2023
+FROM alpine:latest
 
-RUN yum -y install postgresql15 aws-cli gzip
+RUN apk add postgresql15 aws-cli gzip
+RUN mkdir -p /usr/local/bin
 ADD backup.sh /usr/local/bin/backup.sh
 
 WORKDIR /tmp
-USER nobody
 
 ENTRYPOINT ["/usr/local/bin/backup.sh"]
